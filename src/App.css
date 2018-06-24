@@ -1,0 +1,169 @@
+.header {
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  background: lightgray;
+  padding: 10px;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+.flex-container {
+  position: relative;
+  padding-top: 100px;
+  width: 100%;
+  display: flex;
+  /* height: calc(100vh - 100px); */
+}
+
+.sidebar {
+  left: 0;
+  height: calc(100vh - 100px);
+  flex-basis: 200px;
+  width: 200px;
+  background: gray;
+  box-sizing: border-box;
+  transform: translateX(0px);
+  transition: flex-basis 300ms ease;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.sidebar a {
+  display: block;
+  width: 100%;
+  height: 50px;
+  background: rgb(156, 156, 156);
+  padding: 5px;
+  box-sizing: border-box;
+  line-height: 40px;
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  background: rgb(143, 143, 143);
+}
+
+.sidebar .active {
+  background: rgb(138, 138, 138);
+}
+
+.sidebarOut {
+  flex-basis: 0px;
+}
+
+.content {
+  position: relative;
+  height: 100%;
+  flex: 1;
+  background: rgb(247, 247, 247);
+  padding: 10px;
+  box-sizing: border-box;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+form label {
+  display: block;
+  width: 100%;
+}
+
+form input {
+  width: 100%;
+  box-sizing:border-box;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid lightgray;
+  color: rgb(82, 82, 82);
+  font-size: 18px;
+}
+
+.form-group {
+  margin: 20px 0;
+  padding: 3px;
+  border: 2px rgba(0, 0, 0, 0) solid;
+}
+
+.form-group:first-child {
+  margin-top: 0;
+}
+
+.form-group-error {
+  background: rgba(253, 0, 0, 0.774);
+  border: 2px rgb(121, 0, 0) solid;
+  border-radius: 5px;
+}
+
+.error-message {
+  margin: 2px 0px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.hamburger {
+  display: inline-block;
+  height: 100%;
+  width: 40px;
+  font-size: 40px;
+}
+
+.headerul {
+  list-style-type: none;
+  padding: 0;
+  margin-left: 0;
+}
+
+.headerul li {
+  float: left;
+}
+
+.login-error {
+  background: rgba(253, 0, 0, 0.774);
+  border: 2px rgb(121, 0, 0) solid;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.login-message {
+  background: rgba(30, 253, 0, 0.774);
+  border: 2px rgb(0, 121, 0) solid;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 1000px) {
+  
+  .flex-container {
+    display: block;
+    width: 100%;
+  }
+  
+  .sidebar {
+    position: fixed;
+  }
+  
+  .sidebarOut {
+    transform: translateX(-200px)
+  }
+  
+  .content {
+    max-width: 1000px;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .content {
+    max-width: 800px;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .content {
+    max-width: 1100px!important;
+  }
+}
